@@ -21,9 +21,9 @@ dataset=pandas.read_csv(file,names=names)
 #print(dataset.groupby('class').size())
 array=dataset.values
 #keeping aise 20% of data for testing(validation dataset) and rest as training set
-X=array[:,0:4]
-Y=array[:,4]
-validation_size=0.20
+X=array[:,0:4] #first 4 columnsa
+Y=array[:,4]   #5th col
+validation_size=0.20 #20-80
 seed=7
 X_train, X_validation, Y_train, Y_validation = model_selection.train_test_split(X, Y, test_size=validation_size, random_state=seed)
 scoring='accuracy'
